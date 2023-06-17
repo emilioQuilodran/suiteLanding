@@ -1,0 +1,267 @@
+@use './_variables.module.scss' as variables;
+
+.dflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.relative {
+    position: relative;
+}
+
+.justifyCenter {
+    justify-content: center;
+}
+
+.heightI {
+    height: inherit;
+}
+
+.marginM {
+    margin: 15px;
+}
+
+.marginTB_auto {
+    margin: 15px auto;
+}
+
+.marginRyL {
+    margin: 0 10px;
+}
+
+.paddingM {
+    padding: 20px;
+}
+
+.marginL {
+    margin: 8% 15px;
+}
+
+.marginTM {
+    margin-top: 15px;
+}
+
+.marginTS {
+    margin-top: 10px;
+}
+
+.marginTB {
+    margin: 8% 0;
+}
+
+.marginTB_small {
+    margin: 4% 0;
+}
+
+.maxWidthM {
+    max-width: 980px;
+}
+
+.marginAuto {
+    margin: 0 auto;
+    display: block;
+}
+
+.lineHeightM {
+    line-height: variables.$lineHM;
+}
+
+.listStyleNone {
+    list-style: none;
+}
+
+.btnPrimary {
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+    padding: variables.$paddingL;
+    background-color: variables.$secondary-color;
+    color: variables.$primary-color;
+    &:hover {
+        background: variables.$primary-hover-state;
+        color: variables.$primary-color;
+    }
+}
+
+.btnSecondary {
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+    padding: variables.$paddingM;
+    border: solid 1px variables.$secondary-color;
+    &:hover {
+        background: variables.$secondary-color;
+        color: variables.$primary-color;
+    }
+}
+
+.header {
+    margin: 15px;
+}
+
+.testimonialsImage {
+    position: relative;
+    top: -50px;
+    margin-bottom: 40px;
+
+}
+
+.testimonials {
+    background: variables.$secondary-color;
+    color: variables.$primary-color;
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    z-index: 3;
+    .testimonialsWraper {
+        &::before{
+            display: block;
+            position: absolute;
+            content: ' ';
+            background-image: url("/images/pattern-blur.svg");
+            width: 500px;
+            height: 500px;
+            bottom: -60px;
+            top: -14%;
+            left: 0;
+        }
+    }
+}
+
+.footer {
+    padding-top: 180px;
+    background: variables.$light-grey;
+    position: relative;
+    z-index: 1;
+    top: -160px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.hero {
+    .heroContent {
+        position: relative;
+    }
+}
+
+.line {
+    display: block;
+    width:60px; height:60px;  
+    border:solid 3px variables.$secondary-color;
+    border-color:transparent transparent variables.$secondary-color variables.$secondary-color;
+    border-radius: 0px 0px 0px 250px;
+    position: absolute;
+    top: -35px;
+    right: 50%;
+    transform: rotate(136deg);
+    &.curved2 {
+        width: 30px;
+        height: 36px; 
+        top: 390px;
+        right: 50%;
+        transform: rotate(271deg);
+        border:solid 3px variables.$primary-color;
+        border-color:transparent transparent variables.$primary-color variables.$primary-color;
+        border-radius: 0 0 0 174px;
+    }
+}
+
+@media only screen and (min-width: 780px) {
+
+    .header {
+        margin: 15px auto;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+    }
+    .hero {
+        display: flex;
+        margin-bottom: 70px;
+        .heroContent {
+            width: 40%;
+        }
+        .stats {
+            grid-template-areas: 
+            "imageContent imageContent ."
+            "imageContent imageContent ."
+            "companies langs leads";
+        }
+    }
+    .line {
+        &.curved2 {
+            top: 64%;
+        }
+    }
+    .testimonials {
+        .testimonialsWraper {
+            &::before{
+                bottom: auto;
+                top: 2%;
+                left: 15%;
+            }
+        }
+    }
+}
+
+// desktop 980 and up
+@media only screen and (min-width: 980px) {
+    .testimonials, .hero {
+        max-width: 980px;
+        margin: 0 auto;
+    }
+   
+    .hero {
+        display: flex;
+        margin-bottom: 70px;
+        .heroContent {
+            width: 70%;
+        }
+        .stats {
+            gap: 10px;
+            grid-template-areas: 
+            "imageContent companies companies"
+            "imageContent langs langs"
+            "imageContent leads leads";
+        }
+    }
+
+    .line {
+        &.curved2 {
+            top: 30%;
+            right: 53%;
+        }
+    }
+    .testimonials {
+        .testimonialsWraper {
+            padding-left: 50%;
+            text-align: justify;
+            padding-top: 40px;
+            padding-right: 40px;
+            position: relative;
+            &::before{
+                display: block;
+                position: absolute;
+                content: ' ';
+                background-image: url("/images/pattern-blur.svg");
+                width: 500px;
+                height: 305px;
+                bottom: -60px;
+                left: -40px;
+            }
+        }
+    }
+
+    .testimonialsImage {
+        top: -279px;
+        position: absolute;
+        left: 30px;
+    }
+    
+}

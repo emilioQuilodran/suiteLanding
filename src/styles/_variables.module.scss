@@ -1,0 +1,47 @@
+$font-path: '/fonts';
+
+@font-face {
+  font-family: 'Epilogue-Bold';
+  src: url('#{$font-path}/Epilogue-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Epilogue-Regular';
+  src: url('#{$font-path}/Epilogue-Regular.ttf');
+}
+
+// Layout -> design system
+$primary-color: #FAF8F6 ;
+$secondary-color:#172339;
+$neutral-color:red;
+
+$primary-hover-state: linear-gradient(
+  hsl(192, 100%, 67%),
+  hsl(280, 87%, 65%)
+);
+$secondary-hover-state: #172339;
+
+$dark-blue: #172339;
+$grey: #49566D;
+$light-grey: #F3EDE7;
+$white: #FAF8F6;
+$viol1: #A060FF;
+$violet: #CB30E3;
+$orange: #FFA84E;
+  
+
+$heading-xl: 72px;
+$heading-l: 48px; 
+$heading-m: 18px; 
+$heading-s: 16px;
+$quote: 20px;
+
+//spacing
+$paddingM: 10px 15px;
+$paddingL: 20px 25px;
+
+$lineHM: 1.7em;
+
+
+$Epilogue-Bold : "Epilogue-Bold";
+$Epilogue-Regular : "Epilogue-Regular";
